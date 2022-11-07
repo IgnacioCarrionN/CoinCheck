@@ -90,3 +90,11 @@ apply {
 tasks.check {
     dependsOn(tasks.detekt)
 }
+
+tasks.register("generateVersionTxt") {
+    doLast {
+        val versionName = android.defaultConfig.versionName ?: "Unknown version"
+        val versionCode = android.defaultConfig.versionCode ?: "Unknown version code"
+        file("./version.txt").writeText("Version Name: $versionName - Version Code: $versionCode")
+    }
+}
