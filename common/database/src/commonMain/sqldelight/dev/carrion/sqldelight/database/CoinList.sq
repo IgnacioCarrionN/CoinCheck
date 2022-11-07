@@ -1,0 +1,18 @@
+CREATE TABLE CoinList (
+    id TEXT NOT NULL PRIMARY KEY,
+    symbol TEXT NOT NULL,
+    name TEXT NOT NULL,
+    icon TEXT NOT NULL,
+    price REAL NOT NULL,
+    priceChange REAL NOT NULL,
+    priceChangePercent REAL NOT NULL
+);
+
+selectCoins:
+SELECT * FROM CoinList;
+
+insertCoin:
+INSERT OR REPLACE INTO CoinList VALUES ?;
+
+selectCoin:
+SELECT * FROM CoinList WHERE id = ?;
